@@ -1,11 +1,11 @@
 import { useState } from "react";
-
+import type { Position } from "../types/positon";
 export function useGeolocation() {
   const [isLoading, setIsLoading] = useState(false);
-  const [position, setPosition] = useState<{
-    latitude: number;
-    longitude: number;
-  }>({ latitude: 0, longitude: 0 });
+  const [position, setPosition] = useState<Position>({
+    latitude: 0,
+    longitude: 0,
+  });
   async function getCurrentLocation(): Promise<void> {
     return new Promise((resolve, reject) => {
       setIsLoading(true);

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { getForecastWeather } from "../services/apiWeather";
+import type { Position } from "../types/positon";
 
-export function useForecastWeather(position) {
+export function useForecastWeather(position: Position) {
   const [weatherForecastList, setWeatherForecastList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
